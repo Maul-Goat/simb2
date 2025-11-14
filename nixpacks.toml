@@ -8,5 +8,13 @@ cmds = [
     "composer install --no-dev --optimize-autoloader"
 ]
 
+[phases.build]
+cmds = [
+    "pwd",
+    "ls -la",
+    "echo '=== File structure ==='",
+    "find . -name '*.php' | head -10"
+]
+
 [start]
-cmd = "php -S 0.0.0.0:8888 index.php"
+cmd = "cd /app && php -S 0.0.0.0:8888 index.php"
