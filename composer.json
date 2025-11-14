@@ -1,0 +1,13 @@
+{
+    "name": "siglon/landslide-info",
+    "description": "Sistem Informasi Tanah Longsor Indonesia",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "files": ["config.php", "db_config.php"]
+    }
+}
