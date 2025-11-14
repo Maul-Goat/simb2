@@ -3,7 +3,7 @@
     "description": "Sistem Informasi Tanah Longsor Indonesia",
     "type": "project",
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "ext-curl": "*",
         "ext-json": "*"
     },
