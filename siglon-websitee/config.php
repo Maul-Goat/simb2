@@ -21,6 +21,11 @@ if ($is_production) {
 
 define('BASE_URL', rtrim($base_url, '/'));
 
+// Handle base path for Apache
+if ($is_production) {
+    $_SERVER['SCRIPT_NAME'] = '/index.php';
+}
+
 // Include database configuration
 require_once __DIR__ . '/db_config.php';
 
