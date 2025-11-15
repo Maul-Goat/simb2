@@ -1,1 +1,1 @@
-echo "web: php -S 0.0.0.0:\$PORT router.php" > Procfile
+web: php -S 0.0.0.0:$PORT router.php
