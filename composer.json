@@ -3,11 +3,19 @@
     "description": "Sistem Informasi Tanah Longsor Indonesia",
     "type": "project",
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.0",
         "ext-curl": "*",
         "ext-json": "*"
     },
     "autoload": {
-        "files": ["config.php", "db_config.php"]
+        "files": [
+            "siglon-website/config.php",
+            "siglon-website/db_config.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     }
 }

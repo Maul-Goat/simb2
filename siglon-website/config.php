@@ -9,22 +9,21 @@ define('APP_NAME', 'SIGLON - Sistem Informasi Tanah Longsor');
 define('APP_DESCRIPTION', 'Pusat informasi dan pemantauan tanah longsor di Indonesia');
 
 // Konfigurasi environment
-$is_production = getenv('RAILWAY_ENVIRONMENT') === 'production' || false;
+$is_production = getenv('RAILWAY_ENVIRONMENT') === 'production' || getenv('RAILWAY_STATIC_URL') || false;
 
 if ($is_production) {
     // Konfigurasi production (Railway)
     $base_url = getenv('RAILWAY_STATIC_URL') ?: ('https://' . $_SERVER['HTTP_HOST']);
 } else {
     // Konfigurasi development
-    $base_url = 'http://' . $_SERVER['HTTP_HOST'] . str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+    $base_url = 'http://' . $_SERVER['HTTP_HOST'];
 }
 
 define('BASE_URL', rtrim($base_url, '/'));
 
-// Handle base path for Apache
-if ($is_production) {
-    $_SERVER['SCRIPT_NAME'] = '/index.php';
-}
+// Define paths
+define('ROOT_PATH', dirname(__DIR__)); // Parent directory (root project)
+define('APP_PATH', __DIR__); // siglon-website directory
 
 // Include database configuration
 require_once __DIR__ . '/db_config.php';
