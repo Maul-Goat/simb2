@@ -1,21 +1,12 @@
 {
-    "name": "siglon/landslide-info",
-    "description": "Sistem Informasi Tanah Longsor Indonesia",
-    "type": "project",
     "require": {
-        "php": ">=8.0",
+        "php": "^8.1",
         "ext-curl": "*",
         "ext-json": "*"
     },
-    "autoload": {
-        "files": [
-            "siglon-website/config.php",
-            "siglon-website/db_config.php"
-        ]
-    },
     "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
+        "platform": {
+            "php": "8.1"
+        }
     }
 }
