@@ -8,4 +8,10 @@ if ($uri !== '/' && file_exists(__DIR__ . $uri)) {
 }
 
 // Semua request ke index.php di folder siglon-website
-require_once __DIR__ . '/siglon-website/index.php';
+$indexPath = __DIR__ . '/siglon-website/index.php';
+if (file_exists($indexPath)) {
+    require_once $indexPath;
+} else {
+    http_response_code(500);
+    echo "Error: siglon-website/index.php not found";
+}
